@@ -15,7 +15,6 @@ My objective with this app is to create a personal directory of books that the u
 ### User Stories
 + As a user I want to keep track of books I have read.
 + As a user I want to keep track of books I intend to read.
-+ As a user I want to make comments on the books.
 + As a user I want to see which genres I like the best.
 
 ### MVP 
@@ -23,3 +22,10 @@ My objective with this app is to create a personal directory of books that the u
 + As a user I want to move books from that list into the list of completed books.
 + As a user I want to put information about the books in.
 + As a user I want to view both the list of completed books and the list of books I intend to read.
+
+### Stretch-Goals
++ Add comments on the books
++ Have images of the books
++ Find an API that has word counts for books
+	+ Apply that information to the books
+	+ Add a total word-count of words read
