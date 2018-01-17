@@ -5,6 +5,9 @@
 ### The App
 My objective with this app is to create a personal directory of books that the user has read and intends to read. It should function as a goal list. I recently made the decision to try and read more books so now I want to build a tool that would allow myself and others to keep better track of what they have been reading and what they want or intend to read. The books will contain information about the book such as the author, the original release date, and genre. I would also like to add a feature that allows a user to make comments of their thoughts on the book.
 
+### Wireframes
+![Complete Page](/wireframes/Completed.png)
+![To-Read Page](/wireframes/To-Read.png)
 
 ### User Personas
 + Samuel Clemens
