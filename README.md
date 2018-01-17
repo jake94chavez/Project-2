@@ -10,7 +10,7 @@ My objective with this app is to create a personal directory of books that the u
 ![To-Read Page](/wireframes/To-Read.png)
 
 ### Entity Relationship Diagram
-![ERD](/wireframes/Project2-ERD.png)
+![ERD](/wireframes/Project2-ERD-Final.png)
 
 ### Trello Workflow
 https://trello.com/b/05GdO8c5/project-2-express-app
