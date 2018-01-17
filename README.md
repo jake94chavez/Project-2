@@ -9,6 +9,9 @@ My objective with this app is to create a personal directory of books that the u
 ![Complete Page](/wireframes/Completed.png)
 ![To-Read Page](/wireframes/To-Read.png)
 
+### Routes
+![Routes](/wireframes/Routes.png)
+
 ### Entity Relationship Diagram
 ![ERD](/wireframes/Project2-ERD-Final2.png)
 
