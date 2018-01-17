@@ -9,6 +9,9 @@ My objective with this app is to create a personal directory of books that the u
 ![Complete Page](/wireframes/Completed.png)
 ![To-Read Page](/wireframes/To-Read.png)
 
+### Trello Workflow
+https://trello.com/b/05GdO8c5/project-2-express-app
+
 ### User Personas
 + Samuel Clemens
 	+ Sam is a casual reader that wants to keep track of everything he has read and jot down his personal thoughts on each book. He believes that good friends, good books, and sleepy conscience is the ideal life.
