@@ -10,7 +10,7 @@ My objective with this app is to create a personal directory of books that the u
 ![To-Read Page](/wireframes/To-Read.png)
 
 ### Routes
-![Routes](/wireframes/Routes.png)
+![Routes](/wireframes/RoutesFinal.png)
 
 ### Entity Relationship Diagram
 ![ERD](/wireframes/Project2-ERD-Final2.png)
