@@ -16,7 +16,9 @@ var BookSchema = new Schema ({
 	}]
 	haveRead: {
 		type: Boolean,
-		default: false}
+		default: false
+	}
+	comment: String,
 });
 
 var Book = mongoose.model('Book', BookSchema);
