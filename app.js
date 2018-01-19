@@ -11,6 +11,20 @@ var users = require('./routes/users');
 
 var app = express();
 
+// OAuth setup
+var ENV = require('./app-env');
+var googleClientKey = ENV.GOOGLE_CLIENT_ID;
+var googleClientSecret = ENV.GOOGLE_CLIENT_SECRET;
+
+//Sessions
+var expressSession = require('express-session');
+passport.serializeUser(function(user, done) {
+	done(null, user);
+});
+passport.deserializeUser(function(user, done) {
+	done(null, user);
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -22,6 +36,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.session({secret: }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(app.router);
 
 app.use('/', index);
 app.use('/users', users);
