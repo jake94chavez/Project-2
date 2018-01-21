@@ -1,0 +1,73 @@
+ <section class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+      <!--add new section and row, per instructions-->
+          <section class="container">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+      <!--add form to input book data -->
+          <section id='albumForm' class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+
+                  <form class="form-horizontal" id="addNewBook">
+                    <fieldset>
+
+                      <!-- Form Name -->
+                      <legend>Add New Book to Read</legend>
+
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="name">Book Title</label>
+                        <div class="col-md-4">
+                        <input id="bookTitle" name="title" type="text" placeholder="The Catcher in the Rye" class="form-control input-md" required="">
+
+                        </div>
+                      </div>
+                      <!-- Text input-->
+                            <div class="form-group">
+                                  <label class="col-md-4 control-label" for="authorName">Author Name</label>
+                                  <div class="col-md-4">
+                                  <input id="authorName" name="author" type="text" placeholder="J.D. Salinger" class="form-control input-md">
+
+                                  </div>
+                                </div>
+
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="releaseDate">Release Date</label>
+                        <div class="col-md-4">
+                        <input id="releaseDate" name="releaseDate" type="text" placeholder="July 16, 1951" class="form-control input-md">
+
+                        </div>
+                      </div>
+
+                            <!-- Textarea -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="genres">Genres (separated by commas)</label>
+                              <div class="col-md-4">
+                                <textarea class="form-control" id="genres" name="genres" placeholder="Realistic Fiction, Coming-of-Age Fiction"></textarea>
+                              </div>
+                            </div>
+
+
+                      <!-- Button -->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton">Save Album</label>
+                        <div class="col-md-4">
+                          <button id="submitButton" name="submitButton" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+                </div>
+              </section>
+          <h2>Albums</h2>
+        </div>
+      </div>
+      <!-- books -->
+      <div id='books'>
+
+      </div>
+    </section>
