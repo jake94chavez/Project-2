@@ -57,7 +57,7 @@ function generatebookHtml(book) {
   "                      </li>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Author Name:</h4>" +
-  "                        <span class='author-name'>" + book.authorName + "</span>" +
+  "                        <span class='author-name'>" + book.author + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Released date:</h4>" +
