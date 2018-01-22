@@ -16,9 +16,11 @@ $(document).ready(function() {
       //data is the "body" that Req.body refers to on server file
       data: { 
         title: e.currentTarget["1"].value,
-        authorName: e.currentTarget["2"].value,
+        author: e.currentTarget["2"].value,
         releaseDate: e.currentTarget["3"].value,
-        genres: e.currentTarget["4"].value.split(',')
+        genres: e.currentTarget["4"].value.split(','),
+        haveRead: false,
+        comment: ''
       },
       success: newBookSuccess,  //called from functions below
       error: newBookError
@@ -28,8 +30,7 @@ $(document).ready(function() {
 
 const newBookSuccess = (json)=>{  //renders json format
   $("input[type=text], textarea").val("");
- //resets the form to blank inputs
-      samplebooks.push(json); //new book pushed to allbooks array as json
+  renderBook(json);
 }
 
 const newBookError = ()=> {
@@ -37,7 +38,7 @@ const newBookError = ()=> {
 }
 
 // generate just the html for an book row
-function generatebookHtml(book) {
+function generateBookHtml(book) {
   var bookHtml =
   "        <!-- one book -->" +
   "        <div class='row book' data-book-id='" + book._id + "'>" +
@@ -52,7 +53,7 @@ function generatebookHtml(book) {
   "                  <div class='col-md-9 col-xs-12'>" +
   "                    <ul class='list-group'>" +
   "                      <li class='list-group-item'>" +
-  "                        <h4 class='inline-header'>book Name:</h4>" +
+  "                        <h4 class='inline-header'>Book Name:</h4>" +
   "                        <span class='book-title'>" + book.title + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
@@ -60,7 +61,7 @@ function generatebookHtml(book) {
   "                        <span class='author-name'>" + book.author + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
-  "                        <h4 class='inline-header'>Released date:</h4>" +
+  "                        <h4 class='inline-header'>Release Date:</h4>" +
   "                        <span class='book-release-date'>" + book.releaseDate + "</span>" +
   "                      </li>" +
   "                    </ul>" +
@@ -86,5 +87,5 @@ function renderBook(book) {
   var html = generateBookHtml(book);
   console.log('rendering book:', book);
 
-  $('#books').prepend(html);
+  $('#books').append(html);
 }
