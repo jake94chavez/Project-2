@@ -40,8 +40,7 @@ const newBookError = ()=> {
 function generateBookHtml(book) {
   var bookHtml =
   "        <!-- one book -->" +
-  "        <div class='row book' data-book-id='" + book._id + "'>" +
-  "          <div class='col-md-10 col-md-offset-1'>" +
+  "          <div class='col-sm-6'>" +
   "            <div class='panel panel-default'>" +
   "              <div class='panel-body'>" +
   "              <!-- begin book internal row -->" +
@@ -75,8 +74,6 @@ function generateBookHtml(book) {
   "                <button class='btn btn-danger delete-book'>Delete Book</button>" +
   "                <button class='btn btn-success put-book default-hidden'>Save Changes</button>" +
   "              </div>" +
-
-  "            </div>" +
   "          </div>" +
   "          <!-- end one book -->";
   return bookHtml;
