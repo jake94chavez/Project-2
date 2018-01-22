@@ -1,7 +1,7 @@
 $(document).ready(function() {
   console.log('app.js loaded!');
-  $.get('/api/albums').success(function (books) {
-  albums.forEach(function(book) {
+  $.get('/api/books').success(function (books) {
+  books.forEach(function(book) {
     renderBook(book);
   });
 });

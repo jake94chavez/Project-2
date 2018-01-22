@@ -14,6 +14,8 @@ mongoose.connect('mongodb://localhost:27017/Langhorne')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var home = require('./routes/home');
+var api = require('./routes/api');
 
 var app = express();
 
@@ -31,6 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/home', home);
+app.use('/api', api)
 
 // OAuth setup
 var ENV = require('./app-env');

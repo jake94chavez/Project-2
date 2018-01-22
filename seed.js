@@ -6,8 +6,7 @@ var bookList = [
 		author: 'H.G. Wells',
 		releaseDate: '1895',
 		genres: ['Science Fiction'],
-		haveRead: false,
-		comment: ''
+		haveRead: false
 
 	},
 	{
