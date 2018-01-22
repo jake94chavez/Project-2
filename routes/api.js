@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ENV = require('../app-env');
 var mongoose = require('mongoose');
-var db = require('../models')
+var db = require('../models');
 
 router.get('/books', function api_index (req, res){
   db.Book.find(function (err, books) {

@@ -19,7 +19,6 @@ $(document).ready(function() {
         author: e.currentTarget["2"].value,
         releaseDate: e.currentTarget["3"].value,
         genres: e.currentTarget["4"].value.split(','),
-        haveRead: false,
         comment: ''
       },
       success: newBookSuccess,  //called from functions below
