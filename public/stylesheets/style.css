@@ -6,3 +6,24 @@ body {
 a {
   color: #00B7FF;
 }
+
+div.bg {
+	background: url('https://images.fineartamerica.com/images-medium-large/old-library-diego-lezama.jpg')
+}
+
+h1.top {
+	color: white;
+}
+
+.top {
+	color: white;
+}
+
+.row .book {
+	margin: 20, auto;
+}
+
+#big-bg {
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
