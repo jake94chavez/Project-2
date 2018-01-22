@@ -6,7 +6,8 @@ var bookList = [
 		author: 'H.G. Wells',
 		releaseDate: '1895',
 		genres: ['Science Fiction'],
-		haveRead: false
+		haveRead: false,
+		comment: ''
 
 	},
 	{
@@ -24,7 +25,7 @@ db.Book.remove({}, function(err, books){
 	} else {
 		console.log('removed all books');
 
-		db.Book.create(bookList, function(err, albums){
+		db.Book.create(bookList, function(err, books){
 			if(err) { return console.log('ERROR', err); }
 			console.log('all books:', books);
 			console.log('created', books.length, 'books');
