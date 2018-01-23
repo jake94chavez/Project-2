@@ -54,11 +54,16 @@ passport.deserializeUser(function(user, done) {
 // Google Strategy
 var User = require('./models/user');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-
+let googleCallbackUrl;
+if ( app.get('env') === 'development' ) {
+	googleCallbackUrl = "http://127.0.0.1:3000/auth/google/callback"
+} else {
+	googleCallbackUrl = "https://quiet-beach-46840.herokuapp.com/auth/google/callback"
+}
 passport.use(new GoogleStrategy({
 	clientID: googleClientKey,
 	clientSecret: googleClientSecret,
-	callbackURL: "http://127.0.0.1:3000/auth/google/callback"
+	callbackURL: googleCallbackUrl
 },
 function(accessToken, refreshToken, profile, done) {
 	User.findOne({
