@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var findOrCreate = require('mongoose-findorcreate');
 var expressSession = require('express-session');
 var passport = require('passport');
+var cors = require('cors');
 
 
 mongoose.connect('mongodb://localhost:27017/Langhorne')
@@ -31,6 +32,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 app.use('/', home);
 app.use('/users', users);
