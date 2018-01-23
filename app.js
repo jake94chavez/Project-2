@@ -40,8 +40,8 @@ app.use('/read', read);
 
 // OAuth setup
 // var ENV = require('./app-env');
-var googleClientKey = GOOGLE_CLIENT_ID;
-var googleClientSecret = GOOGLE_CLIENT_SECRET;
+var googleClientKey = process.env.GOOGLE_CLIENT_ID;
+var googleClientSecret = process.env.GOOGLE_CLIENT_SECRET;
 
 //Sessions
 passport.serializeUser(function(user, done) {
