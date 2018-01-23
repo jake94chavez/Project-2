@@ -16,6 +16,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var home = require('./routes/home');
 var api = require('./routes/api');
+var read = require('./routes/read')
 
 var app = express();
 
@@ -31,10 +32,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/', home);
 app.use('/users', users);
-app.use('/home', home);
-app.use('/api', api)
+app.use('/login', index);
+app.use('/api', api);
+app.use('/read', read);
 
 // OAuth setup
 var ENV = require('./app-env');

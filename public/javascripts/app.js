@@ -2,7 +2,9 @@ $(document).ready(function() {
   console.log('app.js loaded!');
   $.get('/api/books').success(function (books) {
   books.forEach(function(book) {
+    if (book.haveRead != true) {
     renderBook(book);
+    }
   });
 
   // event handler for the submit button
@@ -30,6 +32,8 @@ $(document).ready(function() {
   $('#books').on('click', '.edit-book', handleEditBookClick);
 
   $('#books').on('click', '.put-book', handleSaveChangesClick);
+
+  $('#books').on('click', '.move-book', handleBookMoveClick)
 });
 
 const newBookSuccess = (json)=>{  //renders json format
@@ -42,19 +46,19 @@ const newBookError = ()=> {
 }
 
 // accepts a book id (mongo id) and return the row in which that book exists
-function getbookRowById(id) {
+function getBookRowById(id) {
   return $('[data-book-id=' + id + ']');
 }
 
 function handleEditBookClick(e) {
   var bookId = $(this).parents('.book').data('book-id');
-  var $bookRow = getbookRowById(bookId);
+  var $bookRow = getBookRowById(bookId);
 
   console.log('attempt to edit id', bookId);
 
   // replace edit button with save button
   $(this).parent().find('.btn').hide();
-  $(this).parent().find('.default-hidden').show();
+  $(this).parent().find('.put-book').show();
 
   // replace current spans with inputs
   var bookName = $bookRow.find('span.book-title').text();
@@ -69,7 +73,7 @@ function handleEditBookClick(e) {
 
 function handleSaveChangesClick(e) {
   var bookId = $(this).parents('.book').data('book-id');
-  var $bookRow = getbookRowById(bookId);
+  var $bookRow = getBookRowById(bookId);
 
   var data = {
     name: $bookRow.find('.edit-book-name').val(),
@@ -103,6 +107,29 @@ function handleDeleteBookClick(e) {
   });
 }
 
+function handleBookMoveClick(e) {
+  var bookId = $(this).parents('.book').data('book-id');
+  var $bookRow = getBookRowById(bookId);
+  console.log('moving book id=' + bookId);
+  var data = {
+    name: $(this).parents('.book').find('span.book-title')[0].innerHTML,
+    authorName: $(this).parents('.book').find('span.author-name')[0].innerHTML,
+    releaseDate: $(this).parents('.book').find('span.book-release-date')[0].innerHTML,
+    haveRead: true
+  };
+
+  $.ajax({
+    method: 'PUT',
+    url: '/api/books/' + bookId,
+    data: data,
+    success: function() {
+      console.log('book successfully moved')
+      $('[data-book-id='+ bookId + ']').remove();
+    }
+  });
+
+}
+
 
 // generate just the html for an book row
 function generateBookHtml(book) {
@@ -120,11 +147,11 @@ function generateBookHtml(book) {
   "                  <div class='col-md-9 col-xs-12'>" +
   "                    <ul class='list-group'>" +
   "                      <li class='list-group-item'>" +
-  "                        <h4 class='inline-header'>Book Name:</h4>" +
+  "                        <h4 class='inline-header'>Title:</h4>" +
   "                        <span class='book-title'>" + book.title + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
-  "                        <h4 class='inline-header'>Author Name:</h4>" +
+  "                        <h4 class='inline-header'>Author:</h4>" +
   "                        <span class='author-name'>" + book.author + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
@@ -141,7 +168,8 @@ function generateBookHtml(book) {
   "              <div class='panel-footer'>" +
   "                <button class='btn btn-info edit-book'>Edit Book</button>" +
   "                <button class='btn btn-danger delete-book'>Delete Book</button>" +
-  "                <button class='btn btn-success put-book default-hidden'>Save Changes</button>" +
+  "                <button class='btn btn-success put-book' style='display:none'>Save Changes</button>" +
+  "                <button class='btn btn-success move-book'>Move to Read</button>" +
   "              </div>" +
 
   "            </div>" +

@@ -68,6 +68,9 @@ router.put('/books/:id', function updateBook(req, res) {
     foundBook.author = req.body.authorName;
     foundBook.title = req.body.name;
     foundBook.releaseDate = req.body.releaseDate;
+    if (req.body.haveRead) {
+      foundBook.haveRead = req.body.haveRead
+    }
     foundBook.save(function(err, saved) {
       if(err) { console.log('error', err); }
       res.json(saved);
