@@ -58,7 +58,7 @@ let googleCallbackUrl;
 if ( app.get('env') === 'development' ) {
 	googleCallbackUrl = "http://127.0.0.1:3000/auth/google/callback"
 } else {
-	googleCallbackUrl = "https://quiet-beach-46840.herokuapp.com/auth/google/callback"
+	googleCallbackUrl = "http://quiet-beach-46840.herokuapp.com/auth/google/callback"
 }
 passport.use(new GoogleStrategy({
 	clientID: googleClientKey,
