@@ -1,3 +1,4 @@
+// This page handles all requests to the database, GET POST PUT and DELETE
 var express = require('express');
 var router = express.Router();
 var ENV = require('../app-env');
@@ -14,6 +15,7 @@ router.get('/books', function api_index (req, res){
   });
 });
 
+// post new book into database
 router.post('/books', (req, res) => {
   console.log('body', req.body);
 
@@ -43,6 +45,33 @@ router.get('/books/:id', function (req, res) {
         break;
       }
     }
+  });
+});
+
+// delete a book from database
+router.delete('/books/:id', function deleteBook(req, res) {
+  console.log('deleting id: ', req.params.id);
+  db.Book.remove({_id: req.params.id}, function(err) {
+    if (err) { return console.log(err); }
+    console.log("removal of id=" + req.params.id  + " successful.");
+    res.status(200).send(); // everything is a-OK
+  });
+});
+
+// update a book in the database
+router.put('/books/:id', function updateBook(req, res) {
+  console.log('updating id ', req.params.id);
+  console.log('received body ', req.body);
+
+  db.Book.findOne({_id: req.params.id}, function(err, foundBook) {
+    if (err) { console.log('error', err); }
+    foundBook.author = req.body.authorName;
+    foundBook.title = req.body.name;
+    foundBook.releaseDate = req.body.releaseDate;
+    foundBook.save(function(err, saved) {
+      if(err) { console.log('error', err); }
+      res.json(saved);
+    });
   });
 });
 
