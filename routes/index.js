@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
-var ENV = require('../app-env');
 var mongoose = require('mongoose');
 
 /* GET home page. */

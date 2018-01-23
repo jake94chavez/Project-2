@@ -1,7 +1,6 @@
 // This page handles all requests to the database, GET POST PUT and DELETE
 var express = require('express');
 var router = express.Router();
-var ENV = require('../app-env');
 var mongoose = require('mongoose');
 var db = require('../models');
 
