@@ -11,7 +11,7 @@ var bookList = [
 
 	},
 	{
-		title: 'God\'s Debris: A Thought Experiment',
+		title: 'God\'s Debris',
 		author: 'Scott Adams',
 		releaseDate:'2001',
 		genres:['Fiction'],
