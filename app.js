@@ -11,7 +11,15 @@ var passport = require('passport');
 var cors = require('cors');
 
 
-mongoose.connect('mongodb://localhost:27017/Langhorne')
+let mLabUsername = process.env.MLABUSER;
+let mLabPassword = process.env.MLABPASSWORD;
+let url = 'mongodb://${mLabUsername}:${mLabPassword}@ds111568.mlab.com:11568/langhorne'
+mongoose.connect(url, 
+				{useMongoClient: true},
+				(err) => {
+					if (err) throw err;
+					else {console.log('connection to db successful');}
+				});
 
 var index = require('./routes/index');
 var users = require('./routes/users');

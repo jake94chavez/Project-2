@@ -10,7 +10,7 @@ $(document).ready(function() {
   // event handler for the submit button
   $('#addNewBook').on('submit', (e) => {
     //prevent default action of event from being triggered
-    e.stopPropagation();
+    e.preventDefault();
     $.ajax({
       method: 'POST',
       url: '/api/books',

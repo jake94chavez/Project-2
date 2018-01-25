@@ -27,3 +27,7 @@ h1.top {
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
+
+div.bg.jumbotron {
+	margin-top: 2%;
+}
