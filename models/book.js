@@ -18,6 +18,7 @@ var BookSchema = new Schema ({
 		type: Boolean,
 		default: false
 	},
+	img: String,
 	comment: String
 });
 

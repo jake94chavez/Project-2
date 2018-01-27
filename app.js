@@ -13,14 +13,14 @@ var cors = require('cors');
 
 let mLabUsername = process.env.MLABUSER;
 let mLabPassword = process.env.MLABPASSWORD;
-let url = 'mongodb://${mLabUsername}:${mLabPassword}@ds111568.mlab.com:11568/langhorne'
-// let url = 'mongodb://localhost:27107/Langhorne'
-mongoose.connect(url, 
-				{useMongoClient: true},
-				(err) => {
-					if (err) throw err;
-					else {console.log('connection to db successful');}
-				});
+// let url = 'mongodb://${mLabUsername}:${mLabPassword}@ds111568.mlab.com:11568/langhorne'
+mongoose.connect('mongodb://localhost:27017/Langhorne')
+// mongoose.connect(url, 
+				// {useMongoClient: true},
+				// (err) => {
+					// if (err) throw err;
+					// else {console.log('connection to db successful');}
+				// });
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -50,8 +50,8 @@ app.use('/api', api);
 app.use('/read', read);
 
 // OAuth setup
-// var ENV = require('./app-env');
-var ENV = process.env
+var ENV = require('./app-env');
+// var ENV = process.env
 var googleClientKey = ENV.GOOGLE_CLIENT_ID;
 var googleClientSecret = ENV.GOOGLE_CLIENT_SECRET;
 

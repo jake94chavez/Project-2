@@ -7,6 +7,7 @@ var bookList = [
 		releaseDate: '1895',
 		genres: ['Science Fiction'],
 		haveRead: false,
+		img: 'https://upload.wikimedia.org/wikipedia/en/2/2f/Timemachinebook.JPG'
 		comment: ''
 
 	},
@@ -16,6 +17,7 @@ var bookList = [
 		releaseDate:'2001',
 		genres:['Fiction'],
 		haveRead: false,
+		img:'https://images-na.ssl-images-amazon.com/images/I/71uSZkTAqjL.jpg'
 		comment: ''
 	}
 ];
