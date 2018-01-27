@@ -87,7 +87,7 @@ function generateBookHtml(book) {
   "              <!-- begin book internal row -->" +
   "                <div class='row'>" +
   "                  <div class='col-md-3 col-xs-12 thumbnail book-art'>" +
-  "                     <img src='" + "http://placehold.it/400x400'" +  " alt='book image'>" +
+  "                     <img src='" + book.img + "'  alt='book image'>" +
   "                  </div>" +
   "                  <div class='col-md-9 col-xs-12'>" +
   "                    <ul class='list-group'>" +
