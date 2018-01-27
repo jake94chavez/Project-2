@@ -20,6 +20,7 @@ $(document).ready(function() {
         author: e.currentTarget["2"].value,
         releaseDate: e.currentTarget["3"].value,
         genres: e.currentTarget["4"].value.split(','),
+        img: e.currentTarget["5"].value,
         comment: ''
       },
       success: newBookSuccess,  //called from functions below
@@ -78,7 +79,7 @@ function handleSaveChangesClick(e) {
   var data = {
     name: $bookRow.find('.edit-book-name').val(),
     authorName: $bookRow.find('.edit-author-name').val(),
-    releaseDate: $bookRow.find('.edit-book-release-date').val()
+    releaseDate: $bookRow.find('.edit-book-release-date').val(),
   };
 
   $.ajax({
@@ -115,6 +116,7 @@ function handleBookMoveClick(e) {
     name: $(this).parents('.book').find('span.book-title')[0].innerHTML,
     authorName: $(this).parents('.book').find('span.author-name')[0].innerHTML,
     releaseDate: $(this).parents('.book').find('span.book-release-date')[0].innerHTML,
+    releaseDate: $(this).parents('.book').find('div.thumbnail')[0].innerHTML,
     haveRead: true
   };
 
