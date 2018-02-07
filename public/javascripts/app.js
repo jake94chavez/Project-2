@@ -116,7 +116,7 @@ function handleBookMoveClick(e) {
     name: $(this).parents('.book').find('span.book-title')[0].innerHTML,
     authorName: $(this).parents('.book').find('span.author-name')[0].innerHTML,
     releaseDate: $(this).parents('.book').find('span.book-release-date')[0].innerHTML,
-    releaseDate: $(this).parents('.book').find('div.thumbnail')[0].innerHTML,
+    img: $(this).parents('.book').find('img')[0].innerHTML,
     haveRead: true
   };
 
